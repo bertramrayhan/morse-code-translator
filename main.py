@@ -18,7 +18,7 @@ def encrypt(message):
 
 def main():
   user_input = input('Please enter your input: ').upper()
-  if any(True if i.isalnum() else False for i in list(user_input)):
+  if any(i.isalnum() for i in list(user_input)):
     output = encrypt(user_input)
     print(f'Encrypted = {output}')
   else:
