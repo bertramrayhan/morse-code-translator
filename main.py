@@ -19,10 +19,10 @@ def main():
   user_input = input('Please enter your input: ').upper()
   if user_input[0].isalnum():
     output = encrypt(user_input)
+    print(f'Encrypted = {output}')
   else:
     output = decrypt(user_input)
-
-  print(output)
+    print(f'Decrypted = {output}')
 
 if __name__ == "__main__":
   main()
