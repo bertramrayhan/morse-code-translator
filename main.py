@@ -12,20 +12,20 @@ def get_key(morse_code):
   return None
 
 def encrypt(message):
-  encrypted_message = [MORSE_CODE_DICT[letter] for letter in message]
+  encrypted_message = [MORSE_CODE_DICT[letter] if letter in MORSE_CODE_DICT else '?' for letter in message]
   return ' '.join(encrypted_message)
+  
 
 def main():
   user_input = input('Please enter your input: ').upper()
-  if user_input[0].isalnum():
+  if any(True if i.isalnum() else False for i in list(user_input)):
     output = encrypt(user_input)
     print(f'Encrypted = {output}')
   else:
     output = decrypt(user_input)
     print(f'Decrypted = {output}')
 
+
 if __name__ == "__main__":
   main()
-    
-#TEST = AYAM BEBEK
-#TEST = .- -.-- .- -- / -... . -... . -.-
+
